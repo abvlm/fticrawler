@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 from urllib.parse import quote
 from re import findall
 
@@ -35,7 +37,6 @@ class FtiFile:
             try:
                 code_id = findall(r'"codeup.php\?(\d*)"', data)[0]
                 post_code = self._get_code(code_id)
-                print("Code [{}] - [{}]".format(code_id, post_code))
                 status = self._download_file(post_code)
             except IndexError:
                 raise FtiException('Unable to parse the HTML response [{}]'.format(data))

@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 from html.parser import HTMLParser
 from re import findall
 
