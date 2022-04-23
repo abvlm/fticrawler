@@ -11,7 +11,7 @@ class FtiQuery(HTMLParser):
     Class to implement a query to the remote 'fourtoutici' database.
     """
 
-    GET_URL_PATTERN = "http://www.fourtoutici.top/search.php?action=showsearchresults&q={}&listyear=20xx&search=Recherche"
+    GET_URL_PATTERN = "http://www.fourtoutici.ac/search.php?action=showsearchresults&q={}&listyear=20xx&search=Recherche"
 
     def __init__(self):
         """
