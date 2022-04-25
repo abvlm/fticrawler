@@ -14,7 +14,8 @@ if __name__ == '__main__':
     print('Use at your own risk!')
     text = input('Enter your query... ')
     print('Processing query [{}]'.format(text))
-
+    p = Path(text)
+    p.mkdir()
     query = core.FtiQuery()
     if query.process(text):
         results = query.get_results()
@@ -24,7 +25,8 @@ if __name__ == '__main__':
             file = core.FtiFile(name, date)
             if file.request_file():
                 response = file.get_response()
-                with open(name, 'wb') as f:
+                name2 = p / name
+                with open(name2, 'wb') as f:
                     f.write(response.content)
             else:
                 print('Unable to request the file')
